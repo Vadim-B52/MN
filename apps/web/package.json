@@ -1,0 +1,14 @@
+{
+  "name": "@mn/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"(web) заглушка. Замени на Next.js — см. docs/SETUP.md\"",
+    "build": "echo \"(web) заглушка\"",
+    "lint": "echo \"(web) заглушка\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": { "@mn/shared": "workspace:*", "@mn/api-client": "workspace:*" },
+  "devDependencies": { "typescript": "^5.6.2" }
+}
