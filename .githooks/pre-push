@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Блокирует прямой push в main. Изменения в main — только через Pull Request.
+protected_branch="main"
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/$protected_branch" ]; then
+    echo "" >&2
+    echo "✋ Прямой push в '$protected_branch' запрещён." >&2
+    echo "   Сделай ветку и открой PR:" >&2
+    echo "     git checkout -b feat/название" >&2
+    echo "     git push -u origin feat/название" >&2
+    echo "     gh pr create --fill --base $protected_branch" >&2
+    echo "" >&2
+    exit 1
+  fi
+done
+exit 0
