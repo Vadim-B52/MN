@@ -32,3 +32,7 @@
 - Не запускай деструктивные команды (`git push --force`, удаление веток/тегов,
   `gh repo delete`, `gh api --method DELETE ...`) без явного разрешения владельца.
 - Секреты — только через `.env`; не коммить, не читай и не выводи содержимое `.env`.
+- Не обходи `.husky/pre-push` флагом `--no-verify`.
+
+> Как это устроено со стороны владельца (урезанный токен, песочница, branch protection) —
+> см. `docs/agent-security.md` и `docs/branch-protection.md`.
