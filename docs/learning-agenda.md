@@ -21,10 +21,12 @@
 - Теория и настройка токена уже расписаны → `docs/agent-security.md`.
   Здесь остаётся практика: собрать рабочий `.devcontainer/`.
 
-## 3. Ликбез: corepack и pnpm
-- [ ] pnpm: менеджер пакетов (альтернатива npm/yarn); зачем в монорепе (workspaces,
+## 3. Ликбез: corepack и pnpm ✅
+Разобрано 2026-07-20. Конспект → [`pnpm-corepack.md`](./pnpm-corepack.md).
+
+- [x] pnpm: менеджер пакетов (альтернатива npm/yarn); зачем в монорепе (workspaces,
       экономия места, скорость).
-- [ ] corepack: встроен в Node, ставит/фиксирует версию pnpm по полю `packageManager`
+- [x] corepack: встроен в Node, ставит/фиксирует версию pnpm по полю `packageManager`
       в package.json. Команда `corepack enable`.
-- [ ] Связка в MN: `packageManager: pnpm@9.x` + `corepack enable` перед `pnpm install`.
-- [ ] Базовые команды pnpm: `install`, `add`, `--filter`, workspaces.
+- [x] Связка в MN: `packageManager: pnpm@9.x` + `corepack enable` перед `pnpm install`.
+- [x] Базовые команды pnpm: `install`, `add`, `--filter`, workspaces.
