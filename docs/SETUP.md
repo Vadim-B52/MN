@@ -58,4 +58,16 @@ pnpm lint && pnpm typecheck  # перед коммитом
 ## 6. Ветки и коммиты
 - Ветки: `feat/…`, `fix/…`, `chore/…`
 - Коммиты: Conventional Commits (`feat: …`, `fix: …`, `docs: …`)
-- В `main` — только через PR (когда будешь готов включить branch protection).
+- В `main` — **только через PR**. Защита включена на двух уровнях:
+  - серверная branch protection — см. [`branch-protection.md`](./branch-protection.md);
+  - локальный `.husky/pre-push` — блокирует прямой push в `main`.
+
+> `.husky/pre-push` активируется автоматически при `pnpm install`
+> (через `"prepare": "husky"` в корневом `package.json`).
+> Проверить: `git config core.hooksPath` → должно быть `.husky/_`.
+> Оговорка: хук обходится флагом `--no-verify` — это защита от ошибки, не барьер.
+
+## 7. Работа с AI-агентами
+Перед тем как пускать агента в репу — прочитать [`agent-security.md`](./agent-security.md):
+модель угроз, настройка урезанного токена, изоляция окружения.
+Правила для самого агента — в [`AGENTS.md`](../AGENTS.md).
